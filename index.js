@@ -16,6 +16,12 @@ class Circle {
 
 const reg = new Circle(2)
 
-reg.draw()
+function adder(){
 
+this.radius++
 
+}
+
+console.log(reg)
+adder.call(reg)
+console.log(reg)
