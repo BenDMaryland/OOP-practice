@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 let url = "https://api.thecatapi.com/v1/breeds?limit=10"
 let container = document.querySelector(".catContainer")
-container.innerText= "hello"
+
 
 const fetchSongs = async () => {
     const response = await fetch(url)
@@ -29,6 +29,8 @@ cats.forEach(cat => {
     let card = document.createElement('div')
     let title = document.createElement("h1")
     let image = document.createElement('img')
+    
+    card.className="card"
     image.src= cat.image.url
     title.innerText = cat.name
 console.log(image)

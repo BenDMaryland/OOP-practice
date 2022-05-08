@@ -1,0 +1,18 @@
+.catContainer {
+
+
+    display: grid;
+    border: 3px solid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 90vw;
+    max-width: 90vw;
+overflow: scroll;
+}
+.card{
+    border: 3px solid;
+
+}
+img{
+    width:fit-content;
+    height:400px
+}
