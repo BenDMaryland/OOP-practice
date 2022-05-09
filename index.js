@@ -5,8 +5,8 @@ window.addEventListener('DOMContentLoaded', () => {
     let search = document.querySelector(".search")
     let searchBar = document.querySelector(".searchBar")
     let allCats
-    let filteredCats=[]
-    search.addEventListener("keypress", searchHandler)
+    let filteredCats = []
+    search.addEventListener("keyup", searchHandler)
 
     fetch(url)
         .then(r => r.json())
@@ -14,19 +14,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function searchHandler(e) {
         searchBar.innerHTML = ``
-      filteredCats = allCats.filter(cat =>  cat.name.includes(e.target.value)  )
- filteredCats.map(cat=>{
-     let desc = document.createElement('h3')
-     searchBar.appendChild(desc).innerText=cat.name
-
- })
-      
+        console.log(e.target.value)
+        filteredCats = allCats.filter(cat => cat.name.includes(e.target.value))
+        filteredCats.map(cat => {
+            let desc = document.createElement('h3')
+            searchBar.appendChild(desc).innerText = cat.name
+        })
 
     }
 
 
     class Cat {
-        constructor(cat,location) {
+        constructor(cat, location) {
             this.cat = cat
             this.makeACat = () => {
                 let card = document.createElement('div')
@@ -57,7 +56,7 @@ window.addEventListener('DOMContentLoaded', () => {
             if (cat.image) {
                 if (cat.image.url) {
 
-                    const catCard = new Cat(cat,"card")
+                    const catCard = new Cat(cat, "card")
                     catCard.makeACat()
                 }
             }
